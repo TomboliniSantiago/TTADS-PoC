@@ -6,18 +6,20 @@
         v-for="(pokemon, index) in pokemons"
         :key="index"
         class="ma-2 pa-0"
-        @click="pokemonDetails(pokemon.id)"
       >
+        <input type="checkbox" class="float-end" @click="fillBar()">
         <div class="pokemon-id-chip">#{{ pokemon.id }}</div>
         <div class="d-flex flex-column align-center justify-center pa-2">
           <img
             class="pokemon-image-grid"
             :src="pokemonImageURL + pokemon.id + '.png'"
             :alt="pokemon.name"
+
           />
           <v-card-title class="text-capitalize">
             {{ pokemon.name }}
           </v-card-title>
+          <button class="btn blue--text" @click="pokemonDetails(pokemon.id)">Mas info</button>
         </div>
       </v-card>
     </div>
@@ -126,12 +128,12 @@ export default {
     return {
       dialog: false,
       tabs: 0,
-      kanto: 151,
+      kanto:905,
       pokemonsURL: "https://pokeapi.co/api/v2/pokemon?limit=",
       pokemonImageURL:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/",
+        //"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/",
       // other possible image urls:
-      // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{ID}.png
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/",
       // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{ID}.png
       // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{ID}.png
       pokemonURL: "https://pokeapi.co/api/v2/pokemon/",
@@ -151,8 +153,8 @@ export default {
       console.log("Show details of Pokémon No. " + this.pokemonDetailId);
     },
     showPokemons() {
+      //localStorage.clear();
       if (localStorage.Pokemons) {
-        // Load Pokémons from Local Storage if possible
         let localPokemons = localStorage.getItem("Pokemons");
         let obj = JSON.parse(localPokemons);
         obj.results.forEach((pokemon) => {
@@ -161,30 +163,33 @@ export default {
         console.log("Pokémons loaded from Local Storage");
       } else {
         axios
-          .get(this.pokemonsURL + this.kanto) // Get Pokémon API data
-          .then((response) => {
-            return response.data;
-          })
-          .then((data) => {
-            data.results.forEach((pokemon) => {
-              pokemon.id = pokemon.url // Get Pokémon ID from url
-                .split("/")
-                .filter(function (part) {
-                  return !!part;
-                })
-                .pop();
-              this.pokemons.push(pokemon);
-            });
-            console.log("Pokémons fetched from API");
-            const pokemonJSON = JSON.stringify(data);
-            localStorage.setItem("Pokemons", pokemonJSON); // Save Pokémon data to Local Storage
-            console.log("Pokémons saved to Local Storage");
+            .get(this.pokemonsURL + this.kanto) // Get Pokémon API data
+            .then((response) => {
+              return response.data;
+            })
+            .then((data) => {
+              data.results.forEach((pokemon) => {
+                pokemon.id = pokemon.url // Get Pokémon ID from url
+                    .split("/")
+                    .filter(function (part) {
+                      return !!part;
+                    })
+                    .pop();
+
+                this.pokemons.push(pokemon);
+              });
+              console.log("Pokémons fetched from API");
+              const pokemonJSON = JSON.stringify(data);
+              localStorage.setItem("Pokemons", pokemonJSON); // Save Pokémon data to Local Storage
+              console.log("Pokémons saved to Local Storage");
+              console.log(pokemonJSON)
           })
           .catch((error) => {
             console.log(error);
           });
       }
     },
+    fillBar(){}
   },
   created() {
     this.showPokemons();
@@ -262,5 +267,8 @@ tr:hover { background-color: transparent !important; }
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(100%, max-content));
   }
+}
+.progress-bar{
+width: auto;
 }
 </style>
