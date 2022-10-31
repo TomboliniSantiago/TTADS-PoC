@@ -1,15 +1,23 @@
 <template>
-  <Pokemons />
+  <div>
+    <progress-bar :value="25"/>
+    <Pokemons/>
+  </div>
+
 </template>
+
+
 
 <script>
   import Pokemons from '../components/Pokemons'
+  import bar from "../components/Bar.vue"
 
   export default {
-    name: 'Home',
+
 
     components: {
       Pokemons,
+      bar
     },
   }
 </script>

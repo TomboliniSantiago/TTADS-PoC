@@ -28,6 +28,7 @@
     </v-app-bar>
 
     <!-- Content -->
+
     <v-main class="main-content">
       <router-view/>
     </v-main>
@@ -40,10 +41,7 @@
 export default {
   name: 'App',
 
-  data: () => ({
-    //
-  }),
-};
+}
 </script>
 
 <style>
