@@ -1,5 +1,4 @@
 <template>
-<!-- sovelluksen runko -->
   <v-app>
     <!-- App bar -->
     <v-app-bar
@@ -17,14 +16,7 @@
     </router-link>
     <v-toolbar-title>Pokémon</v-toolbar-title>
     <v-spacer></v-spacer>
-    <!-- Site info -->
-    <router-link to="/info">
-      <v-btn icon title="Info" aria-label="Info">
-        <v-icon>
-          mdi-information
-        </v-icon>
-      </v-btn>
-    </router-link>
+
     </v-app-bar>
 
     <!-- Content -->

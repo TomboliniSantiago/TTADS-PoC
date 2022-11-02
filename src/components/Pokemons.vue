@@ -1,5 +1,10 @@
 <template>
   <v-container fluid>
+    <!--Progress bar-->
+   <!-- <div id="app">
+      <progress-bar v-on: changePBValue="changePBValue(50)"></progress-bar>
+    </div>
+    -->
     <!-- Grid for all Pokémons -->
     <div class="grid">
       <v-card
@@ -7,7 +12,8 @@
         :key="index"
         class="ma-2 pa-0"
       >
-        <input type="checkbox" class="float-end" @click="fillBar()">
+        <input type="checkbox" class="float-end" @click=fillBar()>
+
         <div class="pokemon-id-chip">#{{ pokemon.id }}</div>
         <div class="d-flex flex-column align-center justify-center pa-2">
           <img
@@ -120,10 +126,11 @@
 
 <script>
 import axios from "axios";
-
+//import progressBar from "./Bar";
 
 export default {
   name: "Pokemons",
+  components: {},
 
   data() {
     return {
@@ -191,12 +198,14 @@ export default {
       }
     },
     fillBar(){
-
-    }
+     // progressBar.changePBValue(50)
+      //console.log(progressBar.props.value)
+    },
   },
   created() {
     this.showPokemons();
   },
+
 };
 </script>
 

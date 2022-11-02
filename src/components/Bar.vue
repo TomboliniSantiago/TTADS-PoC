@@ -26,29 +26,39 @@
           :y="verticalTextAlignP"
       >
         {{ value }}%
+
       </text>
     </svg>
   </div>
 </template>
+
 <script>
 export default {
-  name: "ProgressBar",
-  props: {
-    options: {
-      type: Object,
-      required: false,
-      default: () => {}
-    },
-    value: {
-      type: Number,
-      required: false,
-      default: 0
+  name: 'ProgressBar',
+  data() {
+    return {
+      props: {
+        options: {
+          type: Object,
+          required: false,
+          default: () => {
+          }
+        },
+        value: {
+          type: Number,
+          required: false,
+          default: 0
+        }
+      },
     }
-  }
+  },
+  methods:{
+    changePBValue(newValue){
+      this.props.value = newValue
+      this.$emit("changePBValue")
+    },
 
+
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
