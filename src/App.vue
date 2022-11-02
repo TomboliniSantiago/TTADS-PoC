@@ -8,8 +8,8 @@
       dark
     >
     <!-- Home -->
-    <router-link to="/">
-      <v-btn icon title="Home" aria-label="Home">
+    <router-link to="/Index">
+      <v-btn icon title="Index" aria-label="Index">
         <v-icon>
           mdi-home
         </v-icon>

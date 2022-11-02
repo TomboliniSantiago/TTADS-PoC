@@ -1,6 +1,6 @@
 <template>
   <div>
-    <progress-bar :value="25"/>
+    <progress-bar/>
     <Pokemons/>
   </div>
 
@@ -17,6 +17,7 @@
 
     components: {
       Pokemons,
+      // eslint-disable-next-line vue/no-unused-components
       bar
     },
   }

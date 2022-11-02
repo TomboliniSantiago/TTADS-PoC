@@ -12,7 +12,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            ><a href="https://pokeapi.co/">PokéAPI</a></v-list-item-title
+          ><a href="https://pokeapi.co/">PokéAPI</a></v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             An API for Pokémons and other related information.
@@ -23,7 +23,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            ><a href="https://vuejs.org/">Vue.js</a></v-list-item-title
+          ><a href="https://vuejs.org/">Vue.js</a></v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             JavaScript Framework for building user interfaces and single-page
@@ -35,7 +35,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            ><a href="https://vuetifyjs.com/en/">Vuetify</a></v-list-item-title
+          ><a href="https://vuetifyjs.com/en/">Vuetify</a></v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             Material Design Framework for Vue.js.
@@ -51,7 +51,7 @@
         </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            >Add favourites</v-list-item-title
+          >Add favourites</v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             Mark your favourite Pokémons and save them to Local Storage.  A new page for selected favourites.
@@ -65,7 +65,7 @@
         </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            >Search</v-list-item-title
+          >Search</v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             Search specific Pokémon by its name or ID.
@@ -79,7 +79,7 @@
         </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            >Pokémon details to Local Storage</v-list-item-title
+          >Pokémon details to Local Storage</v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             Save fetched Pokémon details to Local Storage for upcoming reviews. This would save API calls and Pokémons could be viewed on Offline mode.
@@ -87,13 +87,13 @@
         </v-list-item-content>
       </v-list-item>
 
-       <v-list-item>
+      <v-list-item>
         <v-list-item-icon>
           <v-icon>mdi-plus</v-icon>
         </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title class="wrap-text"
-            >More Pokémon details</v-list-item-title
+          >More Pokémon details</v-list-item-title
           >
           <v-list-item-subtitle class="wrap-text">
             More data for individual Pokémon detail dialogs, like evolution chains, abilities or wild encounters.

@@ -121,6 +121,7 @@
 <script>
 import axios from "axios";
 
+
 export default {
   name: "Pokemons",
 
@@ -189,7 +190,9 @@ export default {
           });
       }
     },
-    fillBar(){}
+    fillBar(){
+
+    }
   },
   created() {
     this.showPokemons();
